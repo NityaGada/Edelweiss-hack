@@ -1,15 +1,17 @@
 from django.shortcuts import render
 import subprocess
 
+
 def front(request):
-    context = {"a":1 }
+    context = {"a": 1}
     return render(request, "index.html", context)
+
 
 def options_chain(request):
     import socket
     import struct
     from datetime import datetime
-    
+
     # Set up the TCP/IP connection
     host = 'localhost'  # Assuming the server is running on the same machine
     port = 9011
@@ -38,7 +40,7 @@ def options_chain(request):
     askq = []
     openinterest = []
     prevcloseprice = []
-    
+
     while True:
         data = client_socket.recv(buffer_size)
         if not data:
@@ -57,9 +59,11 @@ def options_chain(request):
             # Process the unpacked data
             packet_length = unpacked_data[0]
             trading_symbol = (
-                unpacked_data[1].decode().rstrip('\x00') if len(unpacked_data) > 1 else None
+                unpacked_data[1].decode().rstrip(
+                    '\x00') if len(unpacked_data) > 1 else None
             )
-            sequence_number = unpacked_data[2] if len(unpacked_data) > 2 else None
+            sequence_number = unpacked_data[2] if len(
+                unpacked_data) > 2 else None
             timestamp = (
                 unpacked_data[3] if len(unpacked_data) > 3 else None
             )
@@ -68,18 +72,21 @@ def options_chain(request):
             ltp = unpacked_data[4] / 100 if len(unpacked_data) > 4 else None
             ltp_quantity = unpacked_data[5] if len(unpacked_data) > 5 else None
             volume = unpacked_data[6] if len(unpacked_data) > 6 else None
-            bid_price = unpacked_data[7] / 100 if len(unpacked_data) > 7 else None
+            bid_price = unpacked_data[7] / \
+                100 if len(unpacked_data) > 7 else None
             bid_quantity = unpacked_data[8] if len(unpacked_data) > 8 else None
-            ask_price = unpacked_data[9] / 100 if len(unpacked_data) > 9 else None
-            ask_quantity = unpacked_data[10] if len(unpacked_data) > 10 else None
-            open_interest = unpacked_data[11] if len(unpacked_data) > 11 else None
-            prev_close_price = unpacked_data[12] / 100 if len(unpacked_data) > 12 else None
-            
-            
+            ask_price = unpacked_data[9] / \
+                100 if len(unpacked_data) > 9 else None
+            ask_quantity = unpacked_data[10] if len(
+                unpacked_data) > 10 else None
+            open_interest = unpacked_data[11] if len(
+                unpacked_data) > 11 else None
+            prev_close_price = unpacked_data[12] / \
+                100 if len(unpacked_data) > 12 else None
+
             data = []
             # Process and display the packet data as needed
-            
-            
+
             tradingsymbol.append(trading_symbol)
             sequencenumber.append(sequence_number)
             ts.append(formatted_datetime)
@@ -92,7 +99,7 @@ def options_chain(request):
             askq.append(ask_quantity)
             openinterest.append(open_interest)
             prevcloseprice.append(prev_close_price)
-        
+
             if len(tradingsymbol) >= 50:
                 data.append(tradingsymbol)
                 data.append(sequencenumber)
@@ -107,5 +114,5 @@ def options_chain(request):
                 data.append(openinterest)
                 data.append(prevcloseprice)
                 return render(request, 'options_chain.html', {'data': data})
-        
+
     return render(request, 'options_chain.html', {'data': data})

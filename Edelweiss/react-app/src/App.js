@@ -1,30 +1,19 @@
-
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import * as Pages from "./pages/index.js";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-<<<<<<< HEAD
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <h1>Hello</h1>
-=======
-        <h2>hi</h2>
->>>>>>> e47db5ecdb4e4d6ed3f7c5e84975ebbb12c98024
-      </header>
+    <div id="App">
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Pages.Home />}></Route>
+          <Route path="/table1" element={<Pages.Table1 />}></Route>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
-}
+};
 
 export default App;

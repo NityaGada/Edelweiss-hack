@@ -1,0 +1,121 @@
+/* @import url(../../images/learnimg.jpg); */
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #E9E8E8;
+    color: #151515;
+}
+
+.start {
+    margin-top: 50px;
+    font-weight: 400;
+}
+
+h2 {
+    padding-top: 20px;
+    padding-left: 50px;
+    padding-bottom: 10px;
+    font-weight: 400;
+    color: #151515;
+}
+
+.securities .card {
+    /* background: linear-gradient(91deg, #2d2a2a 0%, #151515 100%), url('../../images/stock_market.jpeg'); */
+    /* background-image: linear-gradient(to right bottom,
+            rgba(0, 0, 0, 0.8),
+            rgba(0, 0, 0, 0.347)),
+        url('../../images/stock_market.jpeg'); */
+    border-radius: 15px;
+    /* background: linear-gradient(91deg, #2d2a2a 0%, #151515 100%); */
+    color: #E9E8E8;
+    height: 140px;
+    /* border: 1.5px solid #A9C52F; */
+    border: 1.5px solid #151515;
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
+    position: relative;
+}
+
+.securities .c1 {
+    background-image: linear-gradient(to right bottom,
+            rgba(0, 0, 0, 0.8),
+            rgba(0, 0, 0, 0.347)),
+        url('../../images/stock_market.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.securities .c2 {
+    background-image: linear-gradient(to right bottom,
+            rgba(0, 0, 0, 0.8),
+            rgba(0, 0, 0, 0.347)),
+        url('../../images/stm.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.securities .c3 {
+    background-image: linear-gradient(to right bottom,
+            rgba(0, 0, 0, 0.8),
+            rgba(0, 0, 0, 0.347)),
+        url('../../images/futuristic-stock-market-background-with-trend-graph_83282-38.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.securities .c4 {
+    background-image: linear-gradient(to right bottom,
+            rgba(0, 0, 0, 0.8),
+            rgba(0, 0, 0, 0.5)),
+        url('../../images/stock_market.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.securities .card p {
+    position: absolute;
+    left: 15px;
+    bottom: 0;
+    font-weight: 600;
+    font-size: 22px;
+    letter-spacing: 1.3px;
+}
+
+.learn .card {
+    border-radius: 15px;
+    background-image: linear-gradient(to right bottom,
+            rgba(0, 0, 0, 0.8),
+            rgba(0, 0, 0, 0.5)),
+        url('../../images/learn.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: #E9E8E8;
+    height: 300px;
+    /* border: 0.5px solid rgb(104, 101, 101); */
+    border: 1.5px solid #151515;
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
+    position: relative;
+}
+
+.learn .card p {
+    position: absolute;
+    left: 25px;
+    bottom: 20px;
+    font-weight: 600;
+    font-size: 26px;
+    letter-spacing: 1.3px;
+}
+
+h1 {
+    text-align: center;
+    padding-top: 70px;
+    font-family: 'Josefin Sans', sans-serif;
+    color: #151515;
+    font-weight: 600;
+}
+
+/* A9C52F */
