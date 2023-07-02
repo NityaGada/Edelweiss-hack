@@ -5,6 +5,45 @@
             location.reload();
         }, 30000);
 </script>
-<h1>Options Chain</h1>
- 
-{{ data }}
+<table>
+<thead>
+<tr>
+  <th>Expiry Date</th>
+  <th>Volume</th>
+  <th>Open Interest (OI)</th>
+  <th>Change in Open Interest (COI)</th>
+  <th>Last Traded Price (LTP)</th>
+  <th>Implied Volatility</th>
+  <th>Change</th>
+  <th>Bid Quantity</th>
+  <th>Bid Price</th>
+  <th>Ask Price</th>
+  <th>Ask Quantity</th>
+  <th>Strike</th>
+  <th>Call / Put (Ce/Pe)</th>
+  <th>Timestamp</th>
+</tr>
+</thead>
+<tbody>
+{% for array in data %}
+<tr>
+<td>{{array.0}}</td>
+<td>{{array.1}}</td>
+<td>{{array.2}}</td>
+<td>{{array.3}}</td> 
+<td>{{array.4}}</td>
+<td>{{array.5}}</td>
+<td>{{array.6}}</td>
+<td>{{array.7}}</td>
+<td>{{array.8}}</td>
+<td>{{array.9}}</td>
+<td>{{array.10}}</td>
+<td>{{array.11}}</td>
+<td>{{array.12}}</td>
+<td>{{array.13}}</td>  
+</tr>
+{% endfor %}
+</tbody>
+</table>
+
+
