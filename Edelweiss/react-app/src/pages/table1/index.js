@@ -13,10 +13,9 @@ export default function Table1(props) {
 
     const fetchData = async () => {
         try {
-            const response = await axios('http://localhost:8000/option'); // Replace with your Django API endpoint URL
-            const jsonData = await response.json();
-            console.log(jsonData);
-            setData(jsonData);
+            const response = await axios.get('http://localhost:8000/option/');
+            console.log(response.data);
+            setData(response.data);
         } catch (error) {
             console.error('Error fetching data:', error);
         }
@@ -25,9 +24,10 @@ export default function Table1(props) {
     return (
         <div>
             {/* Render the data in your React components */}
-            {data.map((item) => (
+            {/* {data.map((item) => (
                 <p key={item.id}>{item.title}</p>
-            ))}
+            ))} */}
         </div>
     );
+
 }
