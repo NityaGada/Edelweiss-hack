@@ -1,3 +1,9 @@
+body{
+    scroll-behavior: smooth;
+    background-color: #E9E8E8;
+    color: #151515;
+}
+
 .banner{
     background-image: linear-gradient(to right bottom,
     rgba(0, 0, 0, 0),

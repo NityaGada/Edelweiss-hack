@@ -2,6 +2,7 @@ body {
     font-family: 'Montserrat', sans-serif;
     background-color: #E9E8E8;
     color: #151515;
+    scroll-behavior: smooth;
 }
 
 .start {
@@ -130,6 +131,7 @@ h1 {
     font-family: 'Josefin Sans', sans-serif;
     color: #151515;
     font-weight: 600;
+    margin-bottom: 50px;
 }
 
 /* A9C52F */

@@ -1,9 +1,11 @@
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import './index.css';
 
 export default function Card2(props) {
     const navigate = useNavigate();
+
+    
 
     const text = {
         position: "absolute",
@@ -19,21 +21,23 @@ export default function Card2(props) {
             rgba(0, 0, 0, 0.6),
             rgba(0, 0, 0, 0.4)),url(${props.url})`,
         backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
+        backgroundRepeat: "repeat",
         backgroundPosition: "center",
+        border: "none",
     }
 
     return (
         <div className="col-sm-3">
-            <Link to={{pathname: '/table1',
+            {/* <Link to={{pathname: '/table1',
                         state: props.name}}>
                 <div className="card2" style={bgimg}>
                     <div className="card-body">
                         <p style={text}>{props.name}</p>
                     </div>
                 </div>
-            </Link>
-            {/* <button onClick= {() => {
+            </Link> */}
+            
+            <div className="col-sm-3" onClick= {() => {
                 navigate('/table1',
                 {
                     state: {
@@ -42,12 +46,14 @@ export default function Card2(props) {
                 });
             }
             }> 
+            <div className="cursor" style={{cursor: "pointer"}}>
                 <div className="card2" style={bgimg}>
                     <div className="card-body">
                         <p style={text}>{props.name}</p>
                     </div>
                 </div> 
-            </button> */}
+                </div>
+            </div>  
         </div>
     )
 }

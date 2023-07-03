@@ -3,6 +3,19 @@ from django.http import JsonResponse
 import subprocess
 # import json
 
+# security_name=""
+# def get_name(request):
+#     if request.method == 'GET':
+#         # security_name = request.POST.get('securityname')
+#         # security_name = request.data['securityname']
+#         #body = json.loads(request.data)
+#         # print(request.body[0])
+#         #security_name = request.data.decode('utf-8')
+        
+#         security_name = request.GET.get('securityname')
+#         #print(security_name)
+#         return JsonResponse("done", safe=False)
+
 def options_chain(request):
     import socket
     import re
@@ -45,24 +58,16 @@ def options_chain(request):
         data = client_socket.recv(buffer_size)
         if not data:
             break
-
         buffer += data
 
-        
         while len(buffer) >= packet_size:
             packet_data = buffer[:packet_size]
             buffer = buffer[packet_size:]
-
-            
             unpacked_data = struct.unpack('<i30sqqqqqqqqqqqq', packet_data)
-
-            
             packet_length = unpacked_data[0]
             trading_symbol = (
                 unpacked_data[1].decode().rstrip('\x00') if len(unpacked_data) > 1 else None
             )
-
-            
             sequence_number = unpacked_data[2] if len(unpacked_data) > 2 else None
             timestamp = (
                 unpacked_data[3] if len(unpacked_data) > 3 else None
@@ -92,7 +97,6 @@ def options_chain(request):
             elif cp == "" or len(result)==1:
                 iv = '-'
             else:
-
                 k = result[1][7:]
                 tt = result[1][0:7] + " 15:30:00"
                 tt = datetime.strptime(tt, "%d%b%y %H:%M:%S")
@@ -100,9 +104,7 @@ def options_chain(request):
                 r = 0.05
                 q = 0.0
                 flag = cp[0].lower()
-                dic = {'ALLBANKS': 43790.20, 'FINANCIALS': 19322.70, 'MAINIDX': 18487.75, 'MIDCAP': 7592.05}
-
-                # print(ltp,  float(k),dic[result[0]], t, r, flag)
+                dic = {'ALLBANKS': 43790.20, 'FINANCIALS': 19322.70, 'MAINIDX': 18487.75, 'MIDCAPS': 7592.05,'MIDCAP': 7592.05 }
                 try:
                     iv = round(implied_volatility(ltp, dic[result[0]], float(k), t, r, flag)*100, 2)
                 except (BelowIntrinsicException, AboveMaximumException, ZeroDivisionError):
@@ -112,6 +114,14 @@ def options_chain(request):
             change = round(ltp - prev_close_price, 2)
             if iv == float('inf'):
                 iv = '-'
+            
+            colour = False
+            if cp=="CE" and float(k)<dic[result[0]]:
+                colour = True
+            
+            elif cp=="PE" and float(k)>dic[result[0]]:
+                colour = True
+                
             ss = {}
             ss = {
                 'tt' : tt.isoformat(),
@@ -129,6 +139,10 @@ def options_chain(request):
                 'cp' : cp,
                 'timestamp' : timestampp.isoformat(),
                 'sequence' : sequence_number,
+                'name' : result[0],
+                'colour' : colour,
+                
+                
             }
             # ss.append(tt)
             # ss.append(volume)

@@ -13,6 +13,7 @@
     box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
     position: relative;
     margin-top: 20px;
+    width: 17rem;
 }
     
 .card2:hover{
@@ -23,6 +24,7 @@
     position:absolute;
     transition: 0.3s ease;
 }
+
 
 /* .c1 {
     background-image: linear-gradient(to right bottom,

@@ -6,7 +6,8 @@ import {Card2} from "../../components";
 import stockmarket from "../../images/stock_market.jpeg";
 import stm from "../../images/stm.jpg";
 import futurestockmarket from "../../images/futuristic-stock-market-background-with-trend-graph_83282-38.jpeg";
-import learning from "../../images/learning.jpeg";
+import midcaps from "../../images/midcaps.png"
+// import learning from "../../images/learning.jpeg";
 
 const Home = () => {
     return (
@@ -21,27 +22,29 @@ const Home = () => {
                             <Card2 name='ALLBANKS' url={stockmarket}/>
                             <Card2 name='MAINIDX' url={stm}/>
                             <Card2 name='FINANCIALS' url={futurestockmarket}/>
-                            <Card2 name='MIDCAPS' url={stockmarket}/>
+                            <Card2 name='MIDCAPS' url={midcaps}/>
                         </div>
                     </div>
                 </div >
+                <Link to='/table3'>
+                    View All Securites
+                </Link>
             </div>
             <div className='learn'>
                 <div className='banner'></div>
                     <div style={{ backgroundColor: '#E7DECE', paddingBottom: '20px' }}>
                         <h2 className='start'>What are Options Chain</h2>
                         <div className='container'>
-                    <Link to="#">
-                        <Card className="bg-dark text-white shadow-primary"> 
-                            <Card.Img src={learning} alt="Card image" />
-                            <Card.ImgOverlay>
-                                <Card.Text>
-                                    Know the basics and terminologies of the Options Chain.
-                                </Card.Text>
-                            </Card.ImgOverlay>
-                        </Card>
-                    </Link>
-                </div>
+                        <Link to="/learn">
+                            <Card className="bg-dark text-white shadow-primary"> 
+                                <Card.ImgOverlay>
+                                    <Card.Text>
+                                        Know the basics and terminologies of the Options Chain.
+                                    </Card.Text>
+                                </Card.ImgOverlay>
+                            </Card>
+                        </Link>
+                    </div>
                 </div>
             </div>
         </div >
