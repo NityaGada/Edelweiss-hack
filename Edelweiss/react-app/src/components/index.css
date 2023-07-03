@@ -1,0 +1,32 @@
+.card2 {
+    /* background: linear-gradient(91deg, #2d2a2a 0%, #151515 100%), url('../../images/stock_market.jpeg'); */
+    /* background-image: linear-gradient(to right bottom,
+            rgba(0, 0, 0, 0.8),
+            rgba(0, 0, 0, 0.347)),
+        url('../../images/stock_market.jpeg'); */
+    border-radius: 15px;
+    /* background: linear-gradient(91deg, #2d2a2a 0%, #151515 100%); */
+    color: #E9E8E8;
+    height: 140px;
+    /* border: 1.5px solid #A9C52F; */
+    border: 1px solid #151515;
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
+    position: relative;
+    margin-top: 20px;
+}
+    
+.card2:hover{
+    height: 160px;
+    width: 17.5rem;
+    margin-top: 10px;
+    border: 2px solid #ffffff;
+    position:absolute;
+    transition: 0.3s ease;
+}
+
+/* .c1 {
+    background-image: linear-gradient(to right bottom,
+            rgba(0, 0, 0, 0.8),
+            rgba(0, 0, 0, 0.347)),
+        url('../images/stock_market.jpeg');
+} */

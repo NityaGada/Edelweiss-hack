@@ -15,10 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
-from core.views import front,options_chain
+from core.views import options_chain
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("", front, name="front"),
+    # path("", front, name="front"),
     path("option/",include('core.urls'))
 ]

@@ -4,8 +4,8 @@
         setTimeout(function() {
             location.reload();
         }, 30000);
-</script>
-<table>
+</script> 
+{% comment %} <table>
 <thead>
 <tr>
   <th>Expiry Date</th>
@@ -44,6 +44,8 @@
 </tr>
 {% endfor %}
 </tbody>
-</table>
+</table> {% endcomment %}
 
-
+<div id="data">
+{{ data|safe }}
+</div>

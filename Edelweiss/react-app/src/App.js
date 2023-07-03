@@ -10,6 +10,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Pages.Home />}></Route>
           <Route path="/table1" element={<Pages.Table1 />}></Route>
+          <Route path="/learn" element={<Pages.Learn />}></Route>
         </Routes>
       </BrowserRouter>
     </div>

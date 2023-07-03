@@ -1,0 +1,98 @@
+.banner{
+    background-image: linear-gradient(to right bottom,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.562)),
+url('../../images/laptop.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 350px;
+    /* position: fixed; */
+    background-attachment: fixed;
+    width: 100%;
+}
+
+.container{
+    border-radius: 40px;
+    text-align: justify;
+    transition: 0.3s ease;
+}
+.maint .title{
+    font-size: 34px;
+    font-weight: 600;
+}
+
+.tr p {
+    padding: 50px;
+    padding-left: 70px;
+    padding-right: 70px;
+    font-size: 64px;
+    font-weight: 800;
+    max-width: 40ch;
+    text-align: center;
+    transform: scale(0.94);
+    animation: scale 3s forwards cubic-bezier(0.5, 1, 0.89, 1);
+    transition: 0.3s ease;
+    margin-bottom: -20px;
+}
+
+@keyframes scale {
+    100% {
+      transform: scale();
+    }
+}
+
+span {
+    display: inline-block;
+    opacity: 0;
+    filter: blur(4px);
+}
+
+span:nth-child(1) {
+    animation: fade-in 0.8s 0.1s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+  
+span:nth-child(2) {
+    animation: fade-in 0.8s 0.2s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+  
+span:nth-child(3) {
+    animation: fade-in 0.8s 0.3s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+  
+span:nth-child(4) {
+    animation: fade-in 0.8s 0.4s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+@keyframes fade-in {
+    100% {
+      opacity: 1;
+      filter: blur(0);
+    }
+}
+
+.maint{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.maint h1{
+    text-align: left;
+    font-weight: 800;
+}
+
+
+h2{
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 600;
+    padding-top: 50px;
+}
+
+
+/* 
+#E7DECE */
+/* .linkhome{
+    text-decoration: none;
+    margin-left: 10px;
+} */
+
