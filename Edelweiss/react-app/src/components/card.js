@@ -13,7 +13,7 @@ export default function Card2(props) {
         fontSize: "22px",
         letterSpacing: "1.3px",
     }
-    
+
     const bgimg = {
         backgroundImage: `linear-gradient(to right bottom,
             rgba(0, 0, 0, 0.6),
@@ -25,7 +25,7 @@ export default function Card2(props) {
     }
 
     return (
-        <div className="col-sm-3">
+        <>
             {/* <Link to={{pathname: '/table1',
                         state: props.name}}>
                 <div className="card2" style={bgimg}>
@@ -34,24 +34,24 @@ export default function Card2(props) {
                     </div>
                 </div>
             </Link> */}
-            
-            <div className="col-sm-3" onClick= {() => {
+
+            <div className="col-sm-3" onClick={() => {
                 navigate('/table1',
-                {
-                    state: {
-                        name: props.name,
-                    }
-                });
+                    {
+                        state: {
+                            name: props.name,
+                        }
+                    });
             }
-            }> 
-            <div className="cursor" style={{cursor: "pointer"}}>
+            }>
+                {/* <div className="cursor" style={{ cursor: "pointer" }}> */}
                 <div className="card2" style={bgimg}>
                     <div className="card-body">
                         <p style={text}>{props.name}</p>
                     </div>
-                </div> 
                 </div>
-            </div>  
-        </div>
+                {/* </div> */}
+            </div>
+        </>
     )
 }

@@ -11,22 +11,23 @@ body {
 }
 
 h2 {
+    font-family: 'Monteserrat', sans-serif;
     font-weight: 600;
     color: #151515;
 }
 
 /* .securities .card { */
-    /* background: linear-gradient(91deg, #2d2a2a 0%, #151515 100%), url('../../images/stock_market.jpeg'); */
-    /* background-image: linear-gradient(to right bottom,
+/* background: linear-gradient(91deg, #2d2a2a 0%, #151515 100%), url('../../images/stock_market.jpeg'); */
+/* background-image: linear-gradient(to right bottom,
             rgba(0, 0, 0, 0.8),
             rgba(0, 0, 0, 0.347)),
         url('../../images/stock_market.jpeg'); */
-    /* border-radius: 15px; */
-    /* background: linear-gradient(91deg, #2d2a2a 0%, #151515 100%); */
-    /* color: #E9E8E8;
+/* border-radius: 15px; */
+/* background: linear-gradient(91deg, #2d2a2a 0%, #151515 100%); */
+/* color: #E9E8E8;
     height: 140px; */
-    /* border: 1.5px solid #A9C52F; */
-    /* border: 1.5px solid #151515;
+/* border: 1.5px solid #A9C52F; */
+/* border: 1.5px solid #151515;
     box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
     position: relative;
 } */
@@ -82,25 +83,25 @@ h2 {
 
 .learn .card {
     background-image: linear-gradient(to right bottom,
-    rgba(0, 0, 0, 0),
-    rgba(0, 0, 0, 0.562)),
-url('../../images/laptop.jpg');
+            rgba(0, 0, 0, 0),
+            rgba(0, 0, 0, 0.562)),
+        url('../../images/mainscreen.jpg');
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center; 
+    background-position: center;
     border-radius: 20px;
     color: #E9E8E8;
     height: 300px;
     /* border: 0.5px solid rgb(104, 101, 101); */
     border: 1.5px solid #151515;
-    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
+
 }
 
-.card:hover{
-    background-image: url('../../images/laptop.jpg');
+.card:hover {
     box-shadow: 0 22px 44px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
     border: 2px solid #E9E8E8;
-    transition: 0.3s ease;
+    transition: 0.3s ease-in;
+    box-shadow: none;
 }
 
 .learn .card p {
@@ -112,11 +113,11 @@ url('../../images/laptop.jpg');
     letter-spacing: 1.3px;
 }
 
-.learn .banner{
+.learn .banner {
     background-image: linear-gradient(to right bottom,
-    rgba(0, 0, 0, 0),
-    rgba(0, 0, 0, 0.562)),
-url('../../images/dashboard.jpg');
+            rgba(0, 0, 0, 0),
+            rgba(0, 0, 0, 0.562)),
+        url('../../images/dashboard.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -125,6 +126,7 @@ url('../../images/dashboard.jpg');
     background-attachment: fixed;
     width: 100%;
 }
+
 h1 {
     text-align: center;
     padding-top: 70px;
@@ -134,13 +136,35 @@ h1 {
     margin-bottom: 50px;
 }
 
-.custom-link{
-    text-decoration: none;
-    margin-left: 70rem;
-    font-size: 20px;
-    color: black;
-    font-weight: 600;
+.headi {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
+.btnr {
+    text-align: right;
+    padding-right: 40px;
+}
+
+.view {
+    margin-top: 20px;
+    text-align: right;
+    border: 2px solid #151515;
+    border-radius: 15px;
+    background-color: #E7DECE;
+    font-size: 20px;
+    padding: 7px 10px 7px 10px;
+}
+
+.view:hover {
+    background-color: #151515;
+    color: #E7DECE;
+    border: 1.5px solid #E9E8E8;
+    transition: 0.4s ease;
+    text-shadow: 0px 0px 6px #E9E8E8;
+    transition: 0.3s ease;
+    box-shadow: 0 22px 44px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
 }
 
 /* A9C52F */

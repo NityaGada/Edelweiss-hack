@@ -8,9 +8,9 @@ import { useEffect } from 'react';
 const Learn = () => {
     useEffect(() => {
         const id = 'top';
-        document.querySelector(`#${id}`).scrollIntoView({behavior: "smooth"})
+        document.querySelector(`#${id}`).scrollIntoView({ behavior: "smooth" })
     }, []);
-    return(
+    return (
         <div>
             {/* <div className='linkhome'>
                 <Link to="../">Home</Link>
@@ -19,18 +19,18 @@ const Learn = () => {
             </div>
             <div className='container'>
                 <div className='maint'>
-                    <div className='title'  id='top'>
+                    <div className='title' id='top'>
                         <p > Options Chain </p>
                     </div>
-                    <p style={{ fontSize: '18px', fontWeight: '200'}}>
-                        An options chain is a comprehensive listing of all available options for a particular underlying asset, such as a stock, exchange-traded fund (ETF), or index. It provides traders and investors with detailed information about the various options contracts available for that particular asset, including their strike prices, expiration dates, and premiums.The options chain typically displays the call options and put options for the underlying asset, organized by their respective strike prices and expiration dates. 
+                    <p style={{ fontSize: '18px', fontWeight: '200' }}>
+                        An options chain is a comprehensive listing of all available options for a particular underlying asset, such as a stock, exchange-traded fund (ETF), or index. It provides traders and investors with detailed information about the various options contracts available for that particular asset, including their strike prices, expiration dates, and premiums.The options chain typically displays the call options and put options for the underlying asset, organized by their respective strike prices and expiration dates.
                     </p>
                 </div>
                 <div className='Terms'>
                     <div className='container tr'>
-                    <p>
-                        Terminologies Simplified For You.
-                    </p>
+                        <p>
+                            Terminologies Simplified For You.
+                        </p>
                     </div>
                     <div className="container" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
                         <LearningCard head="Call And Put" content="Call and put options are two types of financial derivatives that allow investors to buy or sell an underlying asset at a predetermined price within a specified time frame. 
@@ -66,7 +66,7 @@ const Learn = () => {
                         On the other hand, a put option grants the holder the right to sell the underlying asset at the strike price. It is used when investors expect the price of the asset to fall. If the market price drops below the strike price, the put option can be exercised to generate a 
                         profit. "/>
                     </div>
-                
+
                 </div>
             </div>
         </div>
