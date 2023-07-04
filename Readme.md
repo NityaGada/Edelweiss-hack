@@ -65,3 +65,6 @@ Open any browser and enter localhost:3000 or click [TheOptionsChain](http://loca
 
 Once the webpage loads, 
 _Happy Hacking!_
+
+#Resources:
+>PPT and Demo Video can be found in resources zip folder.
