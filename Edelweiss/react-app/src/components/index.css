@@ -32,3 +32,8 @@
             rgba(0, 0, 0, 0.347)),
         url('../images/stock_market.jpeg');
 } */
+
+.custom-select{
+    border-radius: 5px;
+    margin-left: 74rem;
+}

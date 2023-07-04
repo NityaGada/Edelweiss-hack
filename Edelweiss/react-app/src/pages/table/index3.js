@@ -6,6 +6,8 @@ import axios from 'axios';
 
 import { Select } from '../../components';
 
+import './index.css';
+
 // import Table from 'react-bootstrap/Table';
 
 export default function Table1(props) {
@@ -60,12 +62,12 @@ export default function Table1(props) {
     
         const csvRows = [];
     
-        const headers = Object.keys(dataArray[0]).join(',');
+        const headers = Object.keys(dataArray[0]).slice(0, 16).join(','); 
         csvRows.push(headers);
-    
+
         dataArray.forEach(item => {
-          const row = Object.values(item).map(value => `"${value}"`).join(',');
-          csvRows.push(row);
+            const row = Object.values(item).slice(0, 16).map(value => `"${value}"`).join(','); 
+            csvRows.push(row);
         });
     
         const csvData = csvRows.join('\n');
@@ -96,7 +98,7 @@ export default function Table1(props) {
 
     return (
         <div>
-            <button onClick={downloadCSV}>Download CSV</button> <br />
+            <button onClick={downloadCSV} className='csv-button'>Download CSV</button> <br />
             <div style={{textAlign: "center"}}>Options Market : ALL</div>
             <button 
             onClick= {() => {
@@ -106,18 +108,18 @@ export default function Table1(props) {
             <table>
                 <thead>
                     <tr>
-                        <th>Expiry Date</th>
+                    <th>Expiry Date</th>
                         <th>Volume</th>
                         <th>Open Interest (OI)</th>
                         <th>Change in Open Interest (COI)</th>
-                        <th>Last Traded Price (LTP)</th>
-                        <th>Implied Volatility</th>
-                        <th>Change</th>
+                        <th>Last Traded Price (LTP) (Rupees)</th>
+                        <th>Implied Volatility (%)</th>
+                        <th>Change (Rupees)</th>
                         <th>Bid Quantity</th>
-                        <th>Bid Price</th>
-                        <th>Ask Price</th>
+                        <th>Bid Price (Rupees)</th>
+                        <th>Ask Price (Rupees)</th>
                         <th>Ask Quantity</th>
-                        <th onClick={() => handleSort('strike')}>Strike</th>
+                        <th onClick={() => handleSort('strike')} style={{cursor: "pointer"}}>Strike Price</th>
                         <th>Call / Put (Ce/Pe)</th>
                         <th>Timestamp</th>
                         <th>Sequence</th>

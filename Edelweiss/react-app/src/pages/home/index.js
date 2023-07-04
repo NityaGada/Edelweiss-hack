@@ -26,8 +26,8 @@ const Home = () => {
                         </div>
                     </div>
                 </div >
-                <Link to='/table3'>
-                    View All Securites
+                <Link to='/table3' className='custom-link'>
+                    View All Securites &#8594;
                 </Link>
             </div>
             <div className='learn'>

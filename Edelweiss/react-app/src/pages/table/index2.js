@@ -1,14 +1,16 @@
 import { useEffect, useState } from 'react';
 
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import axios from 'axios';
+
+import './index.css';
 
 // import Table from 'react-bootstrap/Table';
 
 export default function Table2(props) {
     const [data, setData] = useState(null);
-    const { state } = useLocation();
+    // const { state } = useLocation();
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -109,7 +111,7 @@ export default function Table2(props) {
 
     return (
         <div>
-            <button onClick={downloadCSV}>Download CSV</button>
+            <button onClick={downloadCSV} className='csv-button'>Download CSV</button>
             <div style={{textAlign: "center"}}>Futures Market</div>
             <button onClick= {() => {
                 navigate('/table3');
@@ -119,18 +121,18 @@ export default function Table2(props) {
             <table>
                 <thead>
                     <tr>
-                        <th>Expiry Date</th>
+                    <th>Expiry Date</th>
                         <th>Volume</th>
                         <th>Open Interest (OI)</th>
                         <th>Change in Open Interest (COI)</th>
-                        <th>Last Traded Price (LTP)</th>
-                        <th>Implied Volatility</th>
-                        <th>Change</th>
+                        <th>Last Traded Price (LTP) (Rupees)</th>
+                        <th>Implied Volatility (%)</th>
+                        <th>Change (Rupees)</th>
                         <th>Bid Quantity</th>
-                        <th>Bid Price</th>
-                        <th>Ask Price</th>
+                        <th>Bid Price (Rupees)</th>
+                        <th>Ask Price (Rupees)</th>
                         <th>Ask Quantity</th>
-                        <th>Strike</th>
+                        <th>Strike Price</th>
                         <th>Call / Put (Ce/Pe)</th>
                         <th>Timestamp</th>
                         <th>Sequence</th>

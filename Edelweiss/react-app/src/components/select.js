@@ -18,12 +18,14 @@ export default function Select(props) {
 
     return (
         <>
-        <select name="securities" id="securities" onChange={(e) => handleOptionChange(e.target.value)}>
+        <select name="securities" id="securities" onChange={(e) => handleOptionChange(e.target.value)} className="custom-select">
+            <option value="">Select</option>
+            <option value="ALL">ALL</option>
             <option value="ALLBANKS">ALLBANKS</option>
             <option value="MAINIDX">MAINIDX</option>
             <option value="FINANCIALS">FINANCIALS</option>
             <option value="MIDCAPS">MIDCAPS</option>
-            <option value="ALL">ALL</option>
+            
         </select>
         </>
     );

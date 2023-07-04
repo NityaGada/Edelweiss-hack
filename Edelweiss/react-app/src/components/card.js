@@ -5,8 +5,6 @@ import './index.css';
 export default function Card2(props) {
     const navigate = useNavigate();
 
-    
-
     const text = {
         position: "absolute",
         left: "15px",

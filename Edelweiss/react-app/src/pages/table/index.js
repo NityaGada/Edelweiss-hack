@@ -6,6 +6,8 @@ import axios from 'axios';
 
 import { Select } from '../../components';
 
+import './index.css';
+
 // import Table from 'react-bootstrap/Table';
 
 export default function Table1(props) {
@@ -29,13 +31,11 @@ export default function Table1(props) {
                 });
         };
 
-        // Fetch data initially
         fetchData();
 
-        // Fetch data every 30 seconds
         const interval = setInterval(fetchData, 30000);
 
-        // Clean up the interval when the component unmounts
+        
         return () => {
             clearInterval(interval);
         };
@@ -63,12 +63,12 @@ export default function Table1(props) {
     
         const csvRows = [];
     
-        const headers = Object.keys(dataArray[0]).join(',');
+        const headers = Object.keys(dataArray[0]).slice(0, 16).join(','); // Limit to 15 columns
         csvRows.push(headers);
-    
+
         dataArray.forEach(item => {
-          const row = Object.values(item).map(value => `"${value}"`).join(',');
-          csvRows.push(row);
+            const row = Object.values(item).slice(0, 16).map(value => `"${value}"`).join(','); // Limit to 15 columns
+            csvRows.push(row);
         });
     
         const csvData = csvRows.join('\n');
@@ -99,13 +99,12 @@ export default function Table1(props) {
 
     return (
         <div>
-            <button onClick={downloadCSV}>Download CSV</button> <br />
+            <div className='headings'>
+            <button onClick={downloadCSV} className='csv-button'>Download CSV</button> <br />
             <div style={{textAlign: "center"}}>Options Market : {state.name}</div>
-            <button 
-            onClick= {() => {
-                navigate('/table2');
-            }}> View Futures </button> <br />
+            <button onClick= {() => {navigate('/table2');}} className='nav'> View Futures </button> <br />
             <Select />
+            </div>
             <table>
                 <thead>
                     <tr>
@@ -113,14 +112,14 @@ export default function Table1(props) {
                         <th>Volume</th>
                         <th>Open Interest (OI)</th>
                         <th>Change in Open Interest (COI)</th>
-                        <th>Last Traded Price (LTP)</th>
-                        <th>Implied Volatility</th>
-                        <th>Change</th>
+                        <th>Last Traded Price (LTP) (Rupees)</th>
+                        <th>Implied Volatility (%)</th>
+                        <th>Change (Rupees)</th>
                         <th>Bid Quantity</th>
-                        <th>Bid Price</th>
-                        <th>Ask Price</th>
+                        <th>Bid Price (Rupees)</th>
+                        <th>Ask Price (Rupees)</th>
                         <th>Ask Quantity</th>
-                        <th onClick={() => handleSort('strike')}>Strike</th>
+                        <th onClick={() => handleSort('strike')} style={{cursor: "pointer"}}>Strike Price</th>
                         <th>Call / Put (Ce/Pe)</th>
                         <th>Timestamp</th>
                         <th>Sequence</th>

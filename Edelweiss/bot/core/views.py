@@ -1,20 +1,6 @@
 from django.shortcuts import render
 from django.http import JsonResponse
 import subprocess
-# import json
-
-# security_name=""
-# def get_name(request):
-#     if request.method == 'GET':
-#         # security_name = request.POST.get('securityname')
-#         # security_name = request.data['securityname']
-#         #body = json.loads(request.data)
-#         # print(request.body[0])
-#         #security_name = request.data.decode('utf-8')
-        
-#         security_name = request.GET.get('securityname')
-#         #print(security_name)
-#         return JsonResponse("done", safe=False)
 
 def options_chain(request):
     import socket
@@ -38,20 +24,8 @@ def options_chain(request):
 
     packet_size = 130
     buffer = b''
-    data1 = {}
     dic2 = {}
-    # tradingsymbol = []
-    # sequencenumber = []
-    # ts = []
-    # ltpp = []
-    # ltpq = []
-    # v = []
-    # bidprice = []
-    # bidquant = []
-    # askp = []
-    # askq = []
-    # openinterest = []
-    # prevcloseprice = []
+   
     i=0
     while True:
 
@@ -109,8 +83,11 @@ def options_chain(request):
                     iv = round(implied_volatility(ltp, dic[result[0]], float(k), t, r, flag)*100, 2)
                 except (BelowIntrinsicException, AboveMaximumException, ZeroDivisionError):
                     iv = '-'
-
-            change_interest = round(open_interest-previous_open_interest, 2)
+            
+            try:
+                change_interest = str(round((open_interest-previous_open_interest)/previous_open_interest, 2)) + "%"
+            except ZeroDivisionError:
+                change_interest = '-'
             change = round(ltp - prev_close_price, 2)
             if iv == float('inf'):
                 iv = '-'
@@ -144,39 +121,12 @@ def options_chain(request):
                 
                 
             }
-            # ss.append(tt)
-            # ss.append(volume)
-            # ss.append(open_interest)
-            # ss.append(change_interest)
-            # ss.append(ltp)
-            # ss.append(iv)
-            # ss.append(change)
-            # ss.append(bid_quantity)
-            # ss.append(bid_price)
-            # ss.append(ask_price)
-            # ss.append(ask_quantity)
-            # ss.append(int(k))
-            # ss.append(cp)
-            # ss.append(timestampp)
+            
 
             dic2[i]=ss
             i+=1
-            if len(dic2) >= 50:
-                # data.append(tradingsymbol)
-                # data.append(sequencenumber)
-                # data.append(ts)
-                # data.append(ltpp)
-                # data.append(ltpq)
-                # data.append(v)
-                # data.append(bidprice)
-                # data.append(bidquant)
-                # data.append(askp)
-                # data.append(askq)
-                # data.append(openinterest)
-                # data.append(prevcloseprice)
-                # return render(request, 'options_chain.html', {'data': dic2})
-                # dic3 = json.dumps(dic2)
-                # return JsonResponse(dic3, safe=False)
+            if len(dic2) >= 1500:
+                
                 return JsonResponse(dic2)
                 
     return render(request, 'options_chain.html', {'data': data, })

@@ -3,13 +3,19 @@ import './index.css';
 // import laptop from '../../images/laptop.jpg';
 import { LearningCard } from "../../components";
 
+import { useEffect } from 'react';
+
 const Learn = () => {
+    useEffect(() => {
+        const id = 'top';
+        document.querySelector(`#${id}`).scrollIntoView({behavior: "smooth"})
+    }, []);
     return(
         <div>
             {/* <div className='linkhome'>
                 <Link to="../">Home</Link>
             </div> */}
-            <div className='banner'>
+            <div className='banner' id='top'>
             </div>
             <div className='container'>
                 <div className='maint'>
