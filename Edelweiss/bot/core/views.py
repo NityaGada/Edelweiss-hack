@@ -1,14 +1,11 @@
 from django.shortcuts import render
 from django.http import JsonResponse
-import subprocess
-
 
 def options_chain(request):
     import socket
     import re
     import struct
     from datetime import datetime
-    from py_vollib.black_scholes_merton import black_scholes_merton
     from py_vollib.black_scholes.implied_volatility import implied_volatility
     from py_lets_be_rational.exceptions import BelowIntrinsicException
     from py_lets_be_rational.exceptions import AboveMaximumException
@@ -19,7 +16,6 @@ def options_chain(request):
 
     client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     client_socket.connect((host, port))
-
     client_socket.send(b'\x01')
 
     packet_size = 130
